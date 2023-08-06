@@ -1,0 +1,50 @@
+@mixin theme-btn-active {
+	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
+	backdrop-filter: blur(10px);
+	min-width: 160px;
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 30px;
+	border-radius: 15px;
+	box-shadow: 2px 5px 20px 1px rgba($color: #ffffff, $alpha: 0.1);
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 22px;
+	transition: 0.3s ease-in-out all;
+}
+
+@mixin theme-btn {
+	background: linear-gradient(0deg, rgba($color: #fff, $alpha: 0.15) 0%, rgba($color: #fff, $alpha: 0.15) 100%);
+	backdrop-filter: blur(15px);
+	min-width: 160px;
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 30px;
+	border-radius: 15px;
+	box-shadow: 2px 5px 20px 1px rgba($color: #ffffff, $alpha: 0.1);
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 22px;
+	transition: 0.3s ease-in-out all;
+}
+
+@mixin blur-effect {
+	background-color: rgba($color: $text-color, $alpha: 0.15);
+	backdrop-filter: blur(15px);
+	box-shadow: 2px 5px 10px 1px rgba($color: #ffffff, $alpha: 0.1);
+	border-radius: 15px;
+	padding: 50px 65px;
+}
+
+@mixin title-of-block{
+	font-weight: 700;
+	font-size: 65px;
+	letter-spacing: 5px;
+}
+@mixin gradient{
+	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
+}
