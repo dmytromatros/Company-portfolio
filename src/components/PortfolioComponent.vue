@@ -1,9 +1,10 @@
 <template>
-	<div class="portfolio-component">
+	<div class="portfolio-component theme-block">
 		<div class="container">
 			<div class="portfolio-title">{{ title }}</div>
 			<div class="items-wrapper">
-				<div v-for="(work, key) in computedWorks" :key="key" class="portfolio-item" :class="{ reverse: key % 2 != 0 }">
+				<div v-for="(work, key) in computedWorks" :key="key" class="portfolio-item"
+					:class="{ reverse: key % 2 != 0 }">
 					<div class="portfolio-item-image">
 						<img :src="work.image" alt="...">
 					</div>
@@ -61,24 +62,12 @@ export default {
 @import '@/styles/main.scss';
 
 .portfolio-component {
-	margin: 100px 0;
+	// margin: 100px 0;
+	background: linear-gradient(0deg, rgba($color: $pink, $alpha: 0.3) 10%, rgba($color: $blue, $alpha: 0.3) 100%);		
 
 	.portfolio-title {
-		@include title-of-block;
-		max-width: 700px;
-		position: relative;
-		padding-left: 50px;
-
-		&:before {
-			content: '';
-			position: absolute;
-			width: 5px;
-			border-radius: 2px;
-			height: 100%;
-			left: 0;
-			top: 0;
-			@include gradient;
-		}
+		@include left-title;
+		margin-left: 50px;
 	}
 
 	.items-wrapper {
@@ -161,12 +150,13 @@ export default {
 		}
 	}
 
-	.link-to-more{
+	.link-to-more {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin-top: 75px;
-		.link{
+
+		.link {
 			@include theme-btn;
 		}
 	}

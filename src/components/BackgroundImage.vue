@@ -1,13 +1,26 @@
 <template>
 	<div class="back-image-main">
-		<img src="@/assets/backgrounds/main-block-background.jpg" alt="">
-		<div class="dark-color"></div>
+		<img v-if="checkRoute == '/team'"  src="@/assets/backgrounds/works-background.jpg" alt="">
+		<img v-if="checkRoute == '/price-list'"  src="@/assets/backgrounds/price-background.jpg" alt="">
+		<img v-if="checkRoute == '/about'"  src="@/assets/backgrounds/main-block-background.jpg" alt="">
+		<img v-if="checkRoute == '/'" src="https://images-cdn.welcomesoftware.com/Zz0wZGI4ZTI2NjhlNGQxMWViODVlN2QzNTI0ZjhkZTQyOA==" alt="">
+		<div  class="dark-color"></div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'BackgroundImage'
+	name: 'BackgroundImage',
+	data(){
+		return{
+			routes: ['/price-list', '/team' , '/works']
+		}
+	},
+	computed: {
+		checkRoute(){
+			return this.$route.path
+		}
+	}
 }
 </script>
 

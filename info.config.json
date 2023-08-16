@@ -1,13 +1,65 @@
 {
+	"menu": {
+		"0": {
+			"label": "Home",
+			"link": "/"
+		},
+		"1": {
+			"label": "About",
+			"link": "about"
+		},
+		"2": {
+			"label": "Work",
+			"link": "#"
+		},
+		"3": {
+			"label": "Contact",
+			"link": "#"
+		},
+		"4": {
+			"label": "Team",
+			"link": "/team"
+		},
+		"5": {
+			"label": "Prices",
+			"link": "/price-list"
+		}
+	},
+	"contact": {
+		"0": {
+			"label": "Phone",
+			"data": "+380934065363"
+		},
+		"1": {
+			"label": "E-mail",
+			"data": "dimamatroswork@gmail.com"
+		}
+	},
+	"social_media": {
+		"0": {
+			"icon": "telegram",
+			"data": "telegram"
+		},
+		"2": {
+			"icon": "whatsapp",
+			"data": "whatsapp"
+		},
+		"3": {
+			"icon": "gmail",
+			"data": "gmail"
+		}
+	},
+	"copyright": "Copyright © [Your Company Name] 2023. All rights reserved.",
 	"title": {
-		"about": "About our team",
-		"portfolio": "Let`s get in touch with our works"
+		"about": "About my company name",
+		"portfolio": "Let`s get in touch with our works",
+		"feedback": "People choose us"
 	},
 	"team": {
 		"0": {
-			"name" : "Dima Matros",
+			"name": "Dima Matros",
 			"position": "Front-end developer",
-			"baseInfo" : "21 years old, Front-end developer",
+			"baseInfo": "21 years old, Front-end developer",
 			"largeInfo": "Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh. Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh.",
 			"image": "/img/me.725cee93.jpg",
 			"tabs": {
@@ -74,9 +126,9 @@
 			}
 		},
 		"1": {
-			"name" : "Bozhena Dudarenko",
+			"name": "Bozhena Dudarenko",
 			"position": "Web designer",
-			"baseInfo" : "21 years old, Web designer",
+			"baseInfo": "21 years old, Web designer",
 			"largeInfo": "Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh. Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh.",
 			"image": "https://static.vecteezy.com/system/resources/previews/009/379/900/original/woman-face-expression-clipart-design-illustration-free-png.png",
 			"tabs": {
@@ -133,9 +185,9 @@
 			}
 		},
 		"2": {
-			"name" : "Dima Matros",
+			"name": "Dima Matros",
 			"position": "Front-end developer",
-			"baseInfo" : "21 years old, Front-end developer",
+			"baseInfo": "21 years old, Front-end developer",
 			"largeInfo": "Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh. Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh.",
 			"image": "/img/me.725cee93.jpg",
 			"tabs": {
@@ -202,9 +254,9 @@
 			}
 		},
 		"3": {
-			"name" : "Bozhena Dudarenko",
+			"name": "Bozhena Dudarenko",
 			"position": "Web designer",
-			"baseInfo" : "21 years old, Web designer",
+			"baseInfo": "21 years old, Web designer",
 			"largeInfo": "Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh. Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper. Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh.",
 			"image": "https://static.vecteezy.com/system/resources/previews/009/379/900/original/woman-face-expression-clipart-design-illustration-free-png.png",
 			"tabs": {
@@ -371,6 +423,91 @@
 			"name": "Ivan Petrov",
 			"feedback": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Utaccusantium, excepturi culpa nam facere sapiente omnis dolor commodi vel officia recusandaerepellat laborum delectus ipsam cum.",
 			"date": "2023-03-08T12:00:00"
+		}
+	},
+	"price": {
+		"phases": {
+			"0": {
+				"type": "Website strategy",
+				"options": [
+					"Definition of business goals",
+					"Market and competitor analysis",
+					"Identification of the target audience, its needs and desires",
+					"Creation of a unique selling proposition",
+					"Development of sketches, concept and main ideas of the website"
+				],
+				"price": "~1500$"
+			},
+			"1": {
+				"type": "UI/UX design",
+				"options": [
+					"Framework development. At this stage, the designer schematically develops the framework of the elements of the future site and approves it with the customer. It takes from 5 to 20 days to develop the frame, depending on the complexity of the project.",
+					"Prototype. After approval of the framework, ideas and general principles, the final user interface is created. A UI/UX designer \"paints\" the site for developers, lays out all the elements, and shows visually what the final product will look like."
+				],
+				"price": "1000 - 6000$"
+			},
+			"2": {
+				"type": "Front-End development",
+				"explanation": "Front-End development is the technical creation of a website. Developers bring the designer's ideas to life and make the drawn buttons, fields and blocks clickable, active and responsive. In essence, this is the technical creation of the site interface. Your visitors interact with it.",
+				"price": "1800 - 5000$"
+			},
+			"3": {
+				"type": "Back-End development",
+				"options": [
+					"Connection of third-party services",
+					"Setting up non-standard data processing (for example, playing audio or video)",
+					"Processing complex requests"
+				],
+				"price": "4000 - 10000$"
+			},
+			"4": {
+				"type": "Copywriting",
+				"explanation": "The content on the site offers users not only valuable and useful information, but also positively affects the optimization of the site. Keywords are written in the articles, thanks to which search engines analyze the text and determine the page's place in the output.",
+				"price": "50 - 500$ per article"
+			},
+			"5": {
+				"type": "SMM",
+				"explanation": "SMM is aimed at selling goods and services in social networks. Even if you think that in your niche it is difficult or unnecessary to promote anything on social networks, you need to do this type of marketing. SMM increases brand awareness, builds relationships with clients and potential buyers.",
+				"price": "$400 to $20,000 per month"
+			},
+			"6": {
+				"type": "Domain name",
+				"explanation": "A domain name is an individual website address by which your customers and visitors will find you on the Internet.",
+				"price": "$5 to $150 per year"
+			}
+		},
+		"types": {
+			"0": {
+				"type": "Website for business",
+				"explanation": "As a rule, this is a small resource for brand promotion. In essence, this is a business card site that presents the company, its services or products. As a rule, such a site includes the pages \"About the company\", \"Reviews\", \"Services and services\", \"Contacts\", \"Blog\". The price depends on the number of pages and the time spent on their creation",
+				"price": "1000 - 9000 $"
+			},
+			"1": {
+				"type": "Landing page",
+				"explanation": "A landing page can be of two types: a separate one-page site to promote a single product or service, or a separate page on an existing site. The task of the landing page is to provide users with the necessary information about the product or service without distracting other elements.",
+				"price": "1000 - 1500 $"
+			},
+			"2": {
+				"type": "Business card site",
+				"explanation": "This subtype of site is usually a compact online storefront designed to present information about a company, product, or service. Unlike more complex sites, such as online stores or portals, business card sites usually consist of several pages that contain basic information about the business.",
+				"price": "2000 - 7000 $"
+			},
+			"3": {
+				"type": "A blog for companies, organizations, influencers",
+				"explanation": "A blog is considered one of the easiest types of development. At first it seems that its functionality is primitive. But if you understand the tools, it is easy to understand that a blog needs a quality text editor, tools for working with visuals and other functions that affect the cost of the project",
+				"price": "5000 - 7000 $"
+			},
+			"4": {
+				"type": "Image corporate portal",
+				"explanation": "A corporate image site differs from other types of sites in that it is focused on creating a comprehensive image of the company, its values ​​and brand. It usually offers a ton of reference blocks, sophisticated design, functionality and integration, as well as an emphasis on communicating with the target audience and strengthening the company's image",
+				"price": "5000 - 7000 $"
+			}
+		}
+	},
+	"about_company": {
+		"text": {
+			"0": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, rem molestias! Molestiae, nostrum nisi obcaecati fugit placeat velit eum, labore illo ab adipisci voluptatum maxime distinctio libero vitae quod ea veritatis accusantium eveniet cumque dolorum ipsam consequatur minus. Molestiae possimus qui dolore ut quos at perferendis aspernatur? Tempore, quod esse!",
+			"1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod possimus consequatur quidem debitis eaque ab consequuntur quas earum dolorum, culpa ipsa tenetur obcaecati soluta reprehenderit sed natus quisquam amet impedit ea distinctio. Id alias consequuntur nemo porro ad. Iure consequatur obcaecati, assumenda nobis aliquid perferendis cupiditate quas tenetur expedita non."
 		}
 	}
 }

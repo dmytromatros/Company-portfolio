@@ -1,6 +1,11 @@
 <template>
 	<div class="feedback-component theme-block">
 		<div class="container">
+
+			<div class="feedbacks-title">
+				{{ title }}
+			</div>
+
 			<vue-masonry-wall :items="feedbacks" :options="{ width: 400, padding: 12 }">
 				<template v-slot:default="{ item }">
 					<div class="feedback-container">
@@ -25,6 +30,7 @@
 <script>
 
 let feedbacks = require('/info.config.json').feedbacks
+let title = require('/info.config.json').title.feedback
 
 
 import VueMasonryWall from "vue-masonry-wall";
@@ -33,7 +39,8 @@ export default {
 	components: { VueMasonryWall },
 	data() {
 		return {
-			feedbacks: []
+			feedbacks: [],
+			title: title
 		}
 	},
 	methods: {
@@ -67,7 +74,13 @@ export default {
 @import '@/styles/main.scss';
 
 .feedback-component {
-	padding-bottom: 500px;
+	padding-bottom: 150px;
+	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.3) 100%);		
+
+	.feedbacks-title{
+		@include left-title;
+		margin: 50px;
+	}
 
 	.feedback-container {
 		margin-bottom: 0px;

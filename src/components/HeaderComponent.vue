@@ -13,7 +13,7 @@
 					<div class="container">
 						<ul>
 							<li class="header-component-links-link" v-for="(item, key) in menuItems" :key="key">
-								<a :href="item.link">{{ item.label }}</a>
+								<router-link :to="item.link" :replace="true">{{item.label}}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -34,28 +34,14 @@
 
 
 <script>
+
+let menu = require('/info.config.json').menu
+
 export default {
 	name: 'HeaderComponent',
 	data() {
 		return {
-			menuItems: [
-				{
-					label: 'Home',
-					link: '#',
-				},
-				{
-					label: 'About',
-					link: '#',
-				},
-				{
-					label: 'Work',
-					link: '#',
-				},
-				{
-					label: 'Contact',
-					link: '#',
-				}
-			]
+			menuItems: menu
 		}
 	},
 	components: {

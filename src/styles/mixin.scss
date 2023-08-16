@@ -13,6 +13,9 @@
 	letter-spacing: 1px;
 	font-size: 22px;
 	transition: 0.3s ease-in-out all;
+	&:hover{
+		transform: scale(1.05);
+	}
 }
 
 @mixin theme-btn {
@@ -34,7 +37,7 @@
 
 @mixin blur-effect {
 	background-color: rgba($color: $text-color, $alpha: 0.15);
-	backdrop-filter: blur(15px);
+	backdrop-filter: blur(12.5px);
 	box-shadow: 2px 5px 10px 1px rgba($color: #ffffff, $alpha: 0.1);
 	border-radius: 15px;
 	padding: 50px 65px;
@@ -47,4 +50,23 @@
 }
 @mixin gradient{
 	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
+}
+
+
+@mixin left-title{
+	@include title-of-block;
+	max-width: 700px;
+	position: relative;
+	padding-left: 50px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 5px;
+		border-radius: 2px;
+		height: 100%;
+		left: 0;
+		top: 0;
+		@include gradient;
+	}
 }

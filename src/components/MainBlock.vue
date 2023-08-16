@@ -1,8 +1,10 @@
 <template>
 	<div class="main-block">
-		<div class="background-image">
+		<!-- <div class="background-image">
 			<img src="@/assets/backgrounds/main-block-background.jpg" alt="">
-		</div>
+			<img src="https://images-cdn.welcomesoftware.com/Zz0wZGI4ZTI2NjhlNGQxMWViODVlN2QzNTI0ZjhkZTQyOA==" alt="">
+
+		</div> -->
 		<div class="wrapper">
 			<div class="custom-container">
 				<div class="row">
@@ -27,9 +29,8 @@
 			</div>
 
 		</div>
-		<div class="bottom-text">
-			{{ titleAbout }}
-		</div>
+		<!-- <div class="bottom-text">
+		</div> -->
 	</div>
 </template>
 
@@ -61,6 +62,9 @@ export default {
 	// max-height: 750px;
 	min-height: 100vh;
 	position: relative;
+
+	background: rgba($color: $blue, $alpha: 0.3);
+
 
 	.background-image {
 		position: absolute;
@@ -129,12 +133,12 @@ export default {
 		padding-top: 150px;
 		position: absolute;
 		z-index: 15;
-		bottom: -150px;
+		bottom: 0px;
 		left: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: linear-gradient(0deg, rgba($color: $background, $alpha: 1) 60%, rgba($color: #ffffff00, $alpha: 0) 100%); 
+		background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.01) 100%);		
 		@include title-of-block;
 	}
 }
