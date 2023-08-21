@@ -9,18 +9,14 @@
 			"link": "about"
 		},
 		"2": {
-			"label": "Work",
-			"link": "#"
-		},
-		"3": {
 			"label": "Contact",
 			"link": "#"
 		},
-		"4": {
+		"3": {
 			"label": "Team",
 			"link": "/team"
 		},
-		"5": {
+		"4": {
 			"label": "Prices",
 			"link": "/price-list"
 		}

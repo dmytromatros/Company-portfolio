@@ -10,7 +10,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Components
 
 import HomePage from '@/views/HomePage'
-import WorksPage from '@/views/WorksPage'
+import AboutPage from '@/views/AboutPage'
 import TeamPage from '@/views/TeamPage'
 import PricePage from "@/views/PricePage";
 
@@ -33,7 +33,7 @@ const router = new VueRouter({
     },
     {
       path: '/about',
-      component: WorksPage
+      component: AboutPage
     },
     {
       path: '/team',

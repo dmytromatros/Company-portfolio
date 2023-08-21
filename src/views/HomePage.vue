@@ -1,12 +1,12 @@
 <template>
-	<div>
+	<div class="home-page">
 		<BackgroundImage/>
-		<HeaderComponent/>
+		<HeaderComponent :activeMenu="'Home'"/>
 		<MainBlock/>
 		<AboutBlock/>
 		<PortfolioComponent/>
 		<FeedbackComponent/>
-		<FooterComponent/>
+		<FooterComponent :activeMenu="'Home'"/>
 	</div>
 </template>
 

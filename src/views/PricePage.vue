@@ -1,9 +1,9 @@
 <template>
-	<div class="team-page">
+	<div class="price-page">
 		<BackgroundImage />
-		<HeaderComponent />
+		<HeaderComponent  :activeMenu="'Prices'"/>
 		<PriceComponent />
-		<FooterComponent />
+		<FooterComponent :activeMenu="'Prices'"/>
 	</div>
 </template>
 

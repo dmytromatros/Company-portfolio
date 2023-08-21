@@ -1,8 +1,8 @@
 <template>
 	<div class="back-image-main">
-		<img v-if="checkRoute == '/team'"  src="@/assets/backgrounds/works-background.jpg" alt="">
+		<img v-if="checkRoute == '/team'"  src="@/assets/backgrounds/team-background.jpg" alt="">
+		<img v-if="checkRoute == '/about'"  src="@/assets/backgrounds/works-background-1.jpg" alt="">
 		<img v-if="checkRoute == '/price-list'"  src="@/assets/backgrounds/price-background.jpg" alt="">
-		<img v-if="checkRoute == '/about'"  src="@/assets/backgrounds/main-block-background.jpg" alt="">
 		<img v-if="checkRoute == '/'" src="https://images-cdn.welcomesoftware.com/Zz0wZGI4ZTI2NjhlNGQxMWViODVlN2QzNTI0ZjhkZTQyOA==" alt="">
 		<div  class="dark-color"></div>
 	</div>

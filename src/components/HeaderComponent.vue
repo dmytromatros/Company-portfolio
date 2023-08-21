@@ -12,8 +12,9 @@
 				<div class="header-component-links ">
 					<div class="container">
 						<ul>
-							<li class="header-component-links-link" v-for="(item, key) in menuItems" :key="key">
-								<router-link :to="item.link" :replace="true">{{item.label}}</router-link>
+							<li :class="{ 'active-menu': item.label == activeMenu }" class="header-component-links-link"
+								v-for="(item, key) in menuItems" :key="key">
+								<router-link :to="item.link" :replace="true">{{ item.label }}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -44,10 +45,16 @@ export default {
 			menuItems: menu
 		}
 	},
+	props: {
+		activeMenu: {
+			type: String,
+			default: "Home"
+		}
+	},
 	components: {
 	},
-	methods:{
-		toggleBurger(){
+	methods: {
+		toggleBurger() {
 			document.querySelector('.header-component-links').classList.toggle('opened-burger')
 			document.querySelector('.header-component').classList.toggle('colored-header')
 		}
@@ -57,6 +64,23 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
+
+.active-menu {
+	a {
+		color: #ff00fb !important;
+		font-weight: 800 !important;
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background-color: #ff00fb;
+			bottom:-5px ;
+			left: 0;
+		}
+	}
+}
 
 .header-component {
 	position: absolute;
@@ -114,9 +138,10 @@ export default {
 }
 
 @media (max-width: 767px) {
-	.header-component-inner{
+	.header-component-inner {
 		padding: 30px 0px;
 	}
+
 	.burger-button {
 		display: block !important;
 	}
@@ -125,7 +150,7 @@ export default {
 		position: absolute;
 		left: 0;
 		width: 100%;
-		
+
 		padding-left: 20px;
 		padding-right: 20px;
 		height: 0;
@@ -133,8 +158,8 @@ export default {
 		opacity: 0;
 		bottom: 0;
 		transition: 0.3s ease-in-out all;
-		background: linear-gradient(180deg, rgba($color: $background, $alpha: 1) 50%, rgba(255,37,37,0) 100%);
-		
+		background: linear-gradient(180deg, rgba($color: $background, $alpha: 1) 50%, rgba(255, 37, 37, 0) 100%);
+
 		ul {
 			flex-direction: column;
 
@@ -143,7 +168,8 @@ export default {
 			}
 		}
 	}
-	.opened-burger{
+
+	.opened-burger {
 		height: 370px;
 		opacity: 1;
 		bottom: -370px;
@@ -153,15 +179,13 @@ export default {
 }
 
 @media (max-width: 575px) {
-	.header-component-inner{
+	.header-component-inner {
 		padding: 30px 20px;
 	}
 }
 
-.colored-header{
+.colored-header {
 	transition: 0.3s ease-in-out all;
 	background-color: rgba($color: $background, $alpha: 1);
 	backdrop-filter: none;
-}
-
-</style>
+}</style>

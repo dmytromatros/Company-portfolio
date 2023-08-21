@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
 						<ul id="menu">
-							<li v-for="(item, key) in menu" :key="key">
+							<li :class="{ 'active-menu': item.label == activeMenu }" v-for="(item, key) in menu" :key="key">
 								<router-link :to="item.link">{{item.label}}</router-link>
 							</li>
 						</ul>
@@ -77,13 +77,34 @@ export default {
 			socialMedia: socialMedia,
 			copyright: copyright
 		}
-	}
+	},
+	props: {
+		activeMenu: {
+			type: String,
+			default: "Home"
+		}
+	},
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
-
+.active-menu {
+	a {
+		color: #ff00fb !important;
+		font-weight: 800 !important;
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background-color: #ff00fb;
+			bottom:-5px ;
+			left: 0;
+		}
+	}
+}
 .footer-component {
 	padding-top: 100px !important;
 	padding-bottom: 0 !important;

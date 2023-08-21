@@ -1,5 +1,5 @@
 <template>
-	<div class="about-block theme-block">
+	<div class="about-block theme-block" :class="{'pad-top': paddingTop}">
 		<div class="container">
 			<div class="about-block-title">{{ title }}</div>
 			<div class="about-block-text">
@@ -17,6 +17,12 @@ let companyInfo = require('/info.config.json').about_company.text
 
 export default {
 	name: "AboutBlock",
+	props: {
+		paddingTop: {
+			type: Boolean,
+			default: false
+		}
+	},	
 	data() {
 		return {
 			title: titleAbout,
@@ -29,6 +35,10 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
 
+.pad-top{
+	padding-top: 230px;
+	background: linear-gradient(0deg,rgba($color: $pink, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%) !important;
+}
 .about-block{
 
 	background: rgba($color: $blue, $alpha: 0.3);
