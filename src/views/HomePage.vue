@@ -6,29 +6,32 @@
 		<AboutBlock/>
 		<PortfolioComponent/>
 		<FeedbackComponent/>
+		<ContactBlock/>
 		<FooterComponent :activeMenu="'Home'"/>
 	</div>
 </template>
 
 <script>
-import AboutBlock from "@/components/AboutBlock";
+import BackgroundImage from "@/components/BackgroundImage";
 import HeaderComponent from "@/components/HeaderComponent";
 import MainBlock from "@/components/MainBlock";
+import AboutBlock from "@/components/AboutBlock";
 import PortfolioComponent from "@/components/PortfolioComponent";
 import FeedbackComponent from "@/components/FeedbackComponent";
-import BackgroundImage from "@/components/BackgroundImage";
+import 	ContactBlock from "@/components/ContactBlock";
 import FooterComponent from "@/components/FooterComponent";
 
 export default {
   name: 'HomePage',
   components: {
+	BackgroundImage,
 	HeaderComponent,
 	MainBlock,
+	AboutBlock,
 	PortfolioComponent,
 	FeedbackComponent,
-	BackgroundImage,
+	ContactBlock,
 	FooterComponent,
-	AboutBlock
   }
 }
 </script>

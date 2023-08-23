@@ -32,9 +32,10 @@
 					<div class="phase-item" v-for="(phase, key) in phases" :key="key">
 						<div>
 							<b-button class="phase-item-name" v-b-toggle="`collapse-${key}`">
-								<div class="phase-item-name-name">{{ phase.type }}</div>
+								<div class="phase-item-name-name"><span>{{ phase.type }}</span><span>{{ phase.price
+								}}</span></div>
 								<div class="phase-item-name-price">
-									<span>{{ phase.price }}</span>
+
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 										class="bi bi-caret-down-fill" viewBox="0 0 16 16">
 										<path
@@ -111,7 +112,7 @@ export default {
 
 .price-component {
 	padding: 150px 0 200px 0 !important;
-	background: linear-gradient(0deg,rgba($color: $blue, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%);
+	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%);
 
 	.price-text {
 		margin-bottom: 150px;
@@ -168,22 +169,46 @@ export default {
 		@include blur-effect;
 
 		.phase-item {
+			@media (max-width: 767px) {
+					padding: 20px 0;
+					&:not(:first-child){						
+						border-top: 1px solid #fff;
+					}
+				}
 			&-name {
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
 				padding: 20px 30px;
 				border-radius: 0;
 				background-color: transparent;
 				font-weight: 600;
 				font-size: 24px;
 
-				&-name {}
+				
+
+				&-name {
+					display: flex;
+					flex: 1;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					text-align: left;
+
+					@media (max-width: 767px) {
+						flex-direction: column;
+					}
+				}
 
 				&-price {
 					display: flex;
 					align-items: center;
-					gap: 30px;
+					justify-content: center;
+					width: 25px;
+
+					@media (max-width: 575px) {
+						display: none;
+					}
 				}
 			}
 
@@ -214,4 +239,5 @@ export default {
 
 	}
 
-}</style>
+}
+</style>

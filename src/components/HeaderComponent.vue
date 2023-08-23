@@ -65,6 +65,11 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
 
+.container{
+	position: initial;
+	// margin: auto;
+}
+
 .active-menu {
 	a {
 		color: #ff00fb !important;
@@ -90,7 +95,7 @@ export default {
 	left: 0;
 	top: 0;
 	background-color: rgba($color: $text-color, $alpha: 0.1);
-	backdrop-filter: blur(5px);
+	@include blur;
 	// box-shadow: 0 5px 5px 5px rgba($color: $text-color, $alpha: 0.1);
 
 	&-inner {
@@ -187,5 +192,5 @@ export default {
 .colored-header {
 	transition: 0.3s ease-in-out all;
 	background-color: rgba($color: $background, $alpha: 1);
-	backdrop-filter: none;
+	// backdrop-filter: none;
 }</style>

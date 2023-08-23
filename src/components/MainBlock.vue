@@ -8,7 +8,7 @@
 		<div class="wrapper">
 			<div class="custom-container">
 				<div class="row">
-					<div class="col-12 col-md-7 left-side">
+					<div class="col-12 left-side">
 						<div class="left-side-inner">
 							<div class="pre-title">
 								Some small text for pre-title.
@@ -17,7 +17,9 @@
 								<h1>Welcome to our website !</h1>
 							</div>
 							<div class="text">
-								A cum esse, vel dolor rem minima enim provident, in fuga animi quibusdam consectetur dolorum nostrum voluptatibus?
+								A cum esse, vel dolor rem minima enim provident, in fuga animi quibusdam consectetur dolorum
+								nostrum voluptatibus?
+								A cum esse, vel dolor rem minima enim provident, in fuga animi .
 							</div>
 							<div class="buttons">
 								<button @click="buttonAction">Let's start!</button>
@@ -40,13 +42,13 @@ let titleAbout = require('/info.config.json').title.about
 
 export default {
 	name: 'MainBlock',
-	data(){
-		return{
+	data() {
+		return {
 			titleAbout: titleAbout
 		}
 	},
 	methods: {
-		buttonAction(){
+		buttonAction() {
 			console.log('click')
 		}
 	}
@@ -55,12 +57,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
+
 .main-block {
 	// width: 100%;
 	// height: 100%;
 	// min-height: 560px;
 	// max-height: 750px;
 	min-height: 100vh;
+
+	@media (max-width: 767px) {
+		min-height: fit-content;
+	}
+
 	position: relative;
 
 	background: rgba($color: $blue, $alpha: 0.3);
@@ -73,7 +81,8 @@ export default {
 		width: 100%;
 		height: 100%;
 		z-index: 1;
-		img{
+
+		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -94,29 +103,49 @@ export default {
 		max-width: 1320px;
 		margin: auto;
 		padding: 0 15px;
-		.left-side{
-			&-inner{
+
+		.left-side {
+			&-inner {
 				@include blur-effect;
-				.pre-title{
+				text-align: center;
+
+				.pre-title {
 					font-size: 14px;
 					line-height: 20px;
 					letter-spacing: 5px;
 					margin-bottom: 10px;
 				}
-				.title{
-					h1{
+
+				.title {
+					h1 {
 						font-size: 100px;
 						font-weight: 700;
+
+						@media (max-width: 767px) {
+							font-size: 70px;
+						}
+
+						@media (max-width: 575px) {
+							font-size: 40px;
+						}
 					}
+
 					margin-bottom: 50px;
 				}
-				.text{
+
+				.text {
 					font-size: 14px;
 					letter-spacing: 2px;
+					max-width: 1000px;
+					margin: auto;
 				}
-				.buttons{
+
+				.buttons {
 					margin-top: 25px;
-					button{
+					display: flex;
+					justify-content: center;
+
+					button {
 						@include theme-btn-active;
 					}
 				}
@@ -124,10 +153,7 @@ export default {
 		}
 	}
 
-	.bottom-text{
-		// @include blur-effect;
-		// backdrop-filter: blur(50px);
-		// border-radius: 50px;
+	.bottom-text {
 		width: 100%;
 		padding: 80px 100px;
 		padding-top: 150px;
@@ -138,7 +164,7 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.01) 100%);		
+		background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.01) 100%);
 		@include title-of-block;
 	}
 }

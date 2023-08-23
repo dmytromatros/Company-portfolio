@@ -9,14 +9,10 @@
 			"link": "about"
 		},
 		"2": {
-			"label": "Contact",
-			"link": "#"
-		},
-		"3": {
 			"label": "Team",
 			"link": "/team"
 		},
-		"4": {
+		"3": {
 			"label": "Prices",
 			"link": "/price-list"
 		}
@@ -505,5 +501,11 @@
 			"0": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, rem molestias! Molestiae, nostrum nisi obcaecati fugit placeat velit eum, labore illo ab adipisci voluptatum maxime distinctio libero vitae quod ea veritatis accusantium eveniet cumque dolorum ipsam consequatur minus. Molestiae possimus qui dolore ut quos at perferendis aspernatur? Tempore, quod esse!",
 			"1": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod possimus consequatur quidem debitis eaque ab consequuntur quas earum dolorum, culpa ipsa tenetur obcaecati soluta reprehenderit sed natus quisquam amet impedit ea distinctio. Id alias consequuntur nemo porro ad. Iure consequatur obcaecati, assumenda nobis aliquid perferendis cupiditate quas tenetur expedita non."
 		}
+	},
+	"contact_block": {
+		"title":"Contact us!",
+		"text_par_1": "Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis. Quis volutpat proin duis mi. Fermentum id sed tellus amet arcu etiam velit ullamcorper..",
+		"text_par_2": " Quam velit lacus nunc nam lacus erat semper consequat tincidunt. In enim enim velit quis ante maecenas sed sit praesent. Hac magnis lobortis at duis duis viverra non a nibh. Lorem ipsum dolor sit amet consectetur. Duis et consequat nec nec nunc amet nisi felis."
+
 	}
 }

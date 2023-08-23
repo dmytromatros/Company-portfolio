@@ -75,11 +75,15 @@ export default {
 
 .feedback-component {
 	padding-bottom: 150px;
-	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.3) 100%);		
+	background: linear-gradient(0deg, rgba($color: $pink, $alpha: 0.3) 10%, rgba($color: $blue, $alpha: 0.3) 100%);
 
-	.feedbacks-title{
+	.feedbacks-title {
 		@include left-title;
 		margin: 50px;
+
+		@media (max-width: 991px) {
+			margin: 50px 0;
+		}
 	}
 
 	.feedback-container {
@@ -92,7 +96,7 @@ export default {
 			// background-color: red;
 			@include blur-effect;
 			padding: 20px;
-			padding-bottom: 70px;
+			padding-bottom: 70px !important;
 			border-radius: 10px;
 
 			&-name {
@@ -105,7 +109,7 @@ export default {
 				margin-bottom: 20px;
 			}
 
-			&-date{
+			&-date {
 				color: $label-text;
 			}
 		}

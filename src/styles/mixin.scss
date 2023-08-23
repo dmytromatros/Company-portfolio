@@ -1,6 +1,6 @@
 @mixin theme-btn-active {
 	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
-	backdrop-filter: blur(10px);
+	@include blur;
 	min-width: 160px;
 	min-height: 60px;
 	display: flex;
@@ -16,11 +16,15 @@
 	&:hover{
 		transform: scale(1.05);
 	}
+
+	@media (max-width: 575px) {
+	    width: 100%;
+	}
 }
 
 @mixin theme-btn {
 	background: linear-gradient(0deg, rgba($color: #fff, $alpha: 0.15) 0%, rgba($color: #fff, $alpha: 0.15) 100%);
-	backdrop-filter: blur(15px);
+	@include blur;
 	min-width: 160px;
 	min-height: 60px;
 	display: flex;
@@ -33,20 +37,33 @@
 	letter-spacing: 1px;
 	font-size: 22px;
 	transition: 0.3s ease-in-out all;
+	@media (max-width: 575px) {
+	    width: 100%;
+	}
+}
+@mixin blur{
+	backdrop-filter: blur(20px);
 }
 
 @mixin blur-effect {
+	@include blur;
 	background-color: rgba($color: $text-color, $alpha: 0.15);
-	backdrop-filter: blur(12.5px);
 	box-shadow: 2px 5px 10px 1px rgba($color: #ffffff, $alpha: 0.1);
 	border-radius: 15px;
 	padding: 50px 65px;
+
+	@media (max-width: 767px) {
+	    padding: 40px 25px;
+	}
 }
 
 @mixin title-of-block{
 	font-weight: 700;
 	font-size: 65px;
 	letter-spacing: 5px;
+	@media (max-width: 767px) {
+	    font-size: 40px;
+	}
 }
 @mixin gradient{
 	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
@@ -58,6 +75,15 @@
 	max-width: 700px;
 	position: relative;
 	padding-left: 50px;
+	z-index: 1;
+	@media (max-width: 767px) {
+	    max-width: 100%;
+	}
+
+	@media (max-width: 991px) {
+	    padding: 30px 20px;
+		line-height: 1.1;
+	}
 
 	&:before {
 		content: '';
@@ -68,5 +94,11 @@
 		left: 0;
 		top: 0;
 		@include gradient;
+
+		@media (max-width: 991px) {
+		    width: 100%;
+			z-index: -1;
+			border-radius: 15px;
+		}
 	}
 }

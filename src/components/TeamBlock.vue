@@ -69,7 +69,7 @@
 
 						<div class="navigate-buttons">
 							<div class="row">
-								<div v-for="(button, key) in navigateButtons" :key="key" class="col-12 col-md-4 button-col">
+								<div v-for="(button, key) in navigateButtons" :key="key" class="col-12 col-lg-4 button-col">
 									<button @click="button.action" class="navigate-button"
 										:class="[{ active: tab == button.tab }]">
 										{{ button.label }}
@@ -283,7 +283,7 @@ export default {
 
 .about-company-block {
 	padding: 150px 0 250px 0 !important;
-	background: linear-gradient(0deg,rgba($color: $blue, $alpha: 0.3) 0%, rgba($color: $pink, $alpha: 0.3) 50%, rgba($color: $blue, $alpha: 0.3) 100%);
+	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 0%, rgba($color: $pink, $alpha: 0.3) 50%, rgba($color: $blue, $alpha: 0.3) 100%);
 
 	.about-company-inner {
 		.about-company-small-text {
@@ -336,13 +336,22 @@ export default {
 				.item-row {
 					align-items: center;
 					align-items: stretch;
+					row-gap: 50px;
+
+					@media (max-width: 991px) {
+						flex-direction: column-reverse;
+					}
 
 					.info-col {
-						padding-right: 30px;
+						@media (min-width: 991px) {
+							padding-right: 30px;
+						}
 					}
 
 					.image-col {
-						padding-left: 30px;
+						@media (min-width: 991px) {
+							padding-left: 30px;
+						}
 					}
 				}
 
@@ -380,6 +389,7 @@ export default {
 				.person-image {
 					@include blur-effect;
 					min-height: 100%;
+
 					img {
 						width: 100%;
 						max-height: 500px;
@@ -395,16 +405,28 @@ export default {
 			// justify-content: space-around;
 			margin: 50px 0;
 
+			.row {
+				row-gap: 15px;
+			}
+
 			.button-col {
 				// display: flex;
 				// justify-content: center;
-				padding-left: 25px
+
+
+				@media (min-width: 991px) {
+					padding-left: 25px;
+				}
 			}
 
 			.navigate-button {
 				@include theme-btn;
 				min-width: 250px;
-				transition: 0.3s all ease-in-out
+				transition: 0.3s all ease-in-out;
+
+				@media (max-width: 991px) {
+					width: 100%;
+				}
 			}
 
 			.active {
@@ -417,6 +439,7 @@ export default {
 		.main-info {
 			@include blur-effect;
 			padding: 35px 0;
+
 			.main-info-tab {
 				width: 100%;
 
@@ -517,4 +540,5 @@ export default {
 			padding: 10px;
 		}
 	}
-}</style>
+}
+</style>

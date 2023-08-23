@@ -37,11 +37,10 @@ export default {
 
 .pad-top{
 	padding-top: 230px;
-	background: linear-gradient(0deg,rgba($color: $pink, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%) !important;
 }
 .about-block{
 
-	background: rgba($color: $blue, $alpha: 0.3);
+	background: linear-gradient(0deg,rgba($color: $pink, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%) !important;
 
 	&-title{
 		@include left-title;
@@ -52,6 +51,8 @@ export default {
 		display: flex;
 		flex-direction: column;
 		gap: 35px;
+		position: relative;
+		z-index: 1;
 
 		p{
 			@include blur-effect;

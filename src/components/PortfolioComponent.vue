@@ -63,11 +63,11 @@ export default {
 
 .portfolio-component {
 	// margin: 100px 0;
-	background: linear-gradient(0deg, rgba($color: $pink, $alpha: 0.3) 10%, rgba($color: $blue, $alpha: 0.3) 100%);		
+	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 10%, rgba($color: $pink, $alpha: 0.3) 100%);
 
 	.portfolio-title {
 		@include left-title;
-		margin-left: 50px;
+		// margin-left: 50px;
 	}
 
 	.items-wrapper {
@@ -76,12 +76,19 @@ export default {
 		flex-direction: column;
 		gap: 100px;
 
+
+
 		.portfolio-item {
 			display: flex;
 			min-height: 500px;
 			@include blur-effect;
 			padding: 0;
+
 			// overflow: hidden;
+			@media (max-width: 991px) {
+				flex-direction: column;
+				padding: 0 !important;
+			}
 
 			&-image {
 				width: 50%;
@@ -91,6 +98,10 @@ export default {
 				box-shadow: 0 0 25px 1px rgba($color: $text-color, $alpha: 0.3);
 				border-radius: 15px;
 				overflow: hidden;
+
+				@media (max-width: 991px) {
+					width: 100%;
+				}
 
 				img {
 					width: 100%;
@@ -105,6 +116,11 @@ export default {
 				padding: 50px;
 				position: relative;
 				z-index: 2;
+
+				@media (max-width: 991px) {
+					width: 100%;
+					padding: 50px 20px;
+				}
 
 				&-name {
 					font-size: 30px;
@@ -147,6 +163,10 @@ export default {
 
 		.reverse {
 			flex-direction: row-reverse;
+
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
 		}
 	}
 
@@ -160,4 +180,5 @@ export default {
 			@include theme-btn;
 		}
 	}
-}</style>
+}
+</style>
