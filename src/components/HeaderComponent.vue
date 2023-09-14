@@ -18,8 +18,11 @@
 							</li>
 						</ul>
 					</div>
-
 				</div>
+
+				<button class="header-component-contact-button">
+					<span>Let's do it!</span>
+				</button>
 
 				<button class="burger-button" @click="toggleBurger">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
@@ -65,7 +68,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
 
-.container{
+.container {
 	position: initial;
 	// margin: auto;
 }
@@ -75,13 +78,14 @@ export default {
 		color: #ff00fb !important;
 		font-weight: 800 !important;
 		position: relative;
-		&::before{
+
+		&::before {
 			content: "";
 			position: absolute;
 			width: 100%;
 			height: 3px;
 			background-color: #ff00fb;
-			bottom:-5px ;
+			bottom: -5px;
 			left: 0;
 		}
 	}
@@ -96,14 +100,13 @@ export default {
 	top: 0;
 	background-color: rgba($color: $text-color, $alpha: 0.1);
 	@include blur;
-	// box-shadow: 0 5px 5px 5px rgba($color: $text-color, $alpha: 0.1);
-
+    box-shadow: 0 0 10px 1px #a070f5;
 	&-inner {
 		display: flex;
 		width: 100%;
 		align-items: center;
 		justify-content: space-between;
-		padding: 30px 0;
+		padding: 20px 0;
 	}
 
 	.burger-button {
@@ -124,13 +127,15 @@ export default {
 	&-links {
 		ul {
 			display: flex;
-			gap: 20px;
+			gap: 40px;
 		}
 
 		&-link {
 			a {
 				font-weight: 500;
 				transition: 0.3s ease-in-out all;
+				font-size: 19px;
+				letter-spacing: 1px;
 			}
 
 			&:hover {
@@ -138,6 +143,14 @@ export default {
 					opacity: 0.8;
 				}
 			}
+		}
+	}
+
+	&-contact-button {
+		@include theme-btn-white;
+
+		@media (max-width: 991px) {
+			display: none;
 		}
 	}
 }

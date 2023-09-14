@@ -1,8 +1,9 @@
 @mixin theme-btn-active {
 	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
 	@include blur;
-	min-width: 160px;
-	min-height: 60px;
+	letter-spacing: 2px;
+	min-width: 200px;
+	min-height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -11,14 +12,16 @@
 	box-shadow: 2px 5px 20px 1px rgba($color: #ffffff, $alpha: 0.1);
 	font-weight: 600;
 	letter-spacing: 1px;
-	font-size: 22px;
+	font-size: 16px;
+	text-transform: uppercase;
 	transition: 0.3s ease-in-out all;
-	&:hover{
+
+	&:hover {
 		transform: scale(1.05);
 	}
 
 	@media (max-width: 575px) {
-	    width: 100%;
+		width: 100%;
 	}
 }
 
@@ -37,12 +40,43 @@
 	letter-spacing: 1px;
 	font-size: 22px;
 	transition: 0.3s ease-in-out all;
+
 	@media (max-width: 575px) {
-	    width: 100%;
+		width: 100%;
 	}
 }
-@mixin blur{
-	backdrop-filter: blur(20px);
+
+@mixin theme-btn-white {
+	background: $white;
+
+	&>span {
+		color: $main-theme-color;
+		letter-spacing: 2px;
+	}
+
+	color: $main-theme-color;
+	letter-spacing: 2px;
+	min-width: 200px;
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 30px;
+	border-radius: 15px;
+	box-shadow: 2px 5px 20px 1px rgba($color: #ffffff, $alpha: 0.1);
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 16px;
+	text-transform: uppercase;
+	transition: 0.3s ease-in-out all;
+
+	@media (max-width: 575px) {
+		width: 100%;
+	}
+}
+
+@mixin blur {
+	backdrop-filter: blur(25px);
 }
 
 @mixin blur-effect {
@@ -51,37 +85,42 @@
 	box-shadow: 2px 5px 10px 1px rgba($color: #ffffff, $alpha: 0.1);
 	border-radius: 15px;
 	padding: 50px 65px;
+	// border: 1px solid #9342c2;
+	border: 1px solid #fff;
 
 	@media (max-width: 767px) {
-	    padding: 40px 25px;
+		padding: 40px 25px;
 	}
 }
 
-@mixin title-of-block{
+@mixin title-of-block {
 	font-weight: 700;
 	font-size: 65px;
 	letter-spacing: 5px;
+
 	@media (max-width: 767px) {
-	    font-size: 40px;
+		font-size: 40px;
 	}
 }
-@mixin gradient{
+
+@mixin gradient {
 	background: linear-gradient(70deg, rgba($color: $pink, $alpha: 0.5) 10%, rgba($color: $blue, $alpha: 0.5) 100%);
 }
 
 
-@mixin left-title{
+@mixin left-title {
 	@include title-of-block;
 	max-width: 700px;
 	position: relative;
 	padding-left: 50px;
 	z-index: 1;
+
 	@media (max-width: 767px) {
-	    max-width: 100%;
+		max-width: 100%;
 	}
 
 	@media (max-width: 991px) {
-	    padding: 30px 20px;
+		padding: 30px 20px;
 		line-height: 1.1;
 	}
 
@@ -96,9 +135,45 @@
 		@include gradient;
 
 		@media (max-width: 991px) {
-		    width: 100%;
+			width: 100%;
 			z-index: -1;
 			border-radius: 15px;
 		}
+	}
+}
+
+@mixin title {
+	font-size: 27px;
+	letter-spacing: 3px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	position: relative;
+	margin-bottom: 70px;
+
+	span {
+		position: relative;
+		z-index: 1;
+		border: 1px solid $pink;
+		width: fit-content;
+		padding: 15px 30px;
+		border-radius: 50px;
+		background-color: $white;
+		display: block;
+		margin: auto;
+	}
+
+	&::before {
+		content: '';
+		height: 2px;
+		background-color: $pink;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+
+	>* {
+		color: $main-theme-color;
 	}
 }

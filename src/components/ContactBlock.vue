@@ -1,5 +1,8 @@
 <template>
 	<div class="contact-block theme-block">
+		<div class="background">
+			<img src="@/assets/backgrounds/portfolio-back.png" alt="">
+		</div>
 		<div class="container">
 			<div class="contact-wrapper">
 				<div class="contact-wrapper-contacts">
@@ -27,18 +30,19 @@
 				</div>
 				<div class="row main-row">
 					<div class="col-12 col-lg-6">
-						<form @submit.prevent="sendEmail()">
+						<form @submit.prevent="sendEmail">
 							<div class="input-wrapper">
 								<label for="email-input">Email</label>
-								<input type="email" name="email" id="email-input" placeholder="Enter a valid email address">
+								<input type="email" name="email" id="email-input" placeholder="Enter a valid email address"
+								v-model="formData.email">
 							</div>
 							<div class="input-wrapper">
 								<label for="name-input">Name</label>
-								<input type="text" name="name" id="name-input" placeholder="Enter your name">
+								<input type="text" name="name" id="name-input" placeholder="Enter your name" v-model="formData.name">
 							</div>
 							<div class="input-wrapper">
 								<label for="message">Message</label>
-								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
+								<textarea name="message" id="message" placeholder="Enter your message" v-model="formData.text"></textarea>
 							</div>
 
 							<button type="submit">Send a message</button>
@@ -90,12 +94,17 @@ export default {
 		return {
 			contact,
 			socialMedia,
-			blockInfo
+			blockInfo,
+			formData: {
+				email: '',
+				name: '',
+				text: ''
+			}
 		}
 	},
 	methods: {
-		sendEmail(data) {
-			console.log(data)
+		sendEmail() {
+			console.log(this.formData)
 		}
 	}
 }
@@ -106,18 +115,44 @@ export default {
 
 .contact-block {
 	padding: 150px 0 !important;
-	background: linear-gradient(0deg, rgba($color: $blue, $alpha: 0.3) 0%, rgba($color: $pink, $alpha: 0.3) 100%);
+	background: linear-gradient(45deg, $light-pink 0%, rgba(0, 0, 255, 0.3) 100%);
+	position: relative;
+	z-index: 1;
+
+	.background {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0.1;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
 
 	.contact-wrapper {
 		@include blur-effect;
 		padding-top: 120px;
 		position: relative;
+		box-shadow: 0 0 20px 1px rgba($color: $main-theme-color, $alpha: 0.5);
 
 		&-contacts {
 			position: absolute;
 			transform: translateX(-50%);
 			left: 50%;
 			top: -50px;
+			// display: none;
 
 			display: flex;
 			align-items: center;
@@ -140,13 +175,18 @@ export default {
 			}
 
 			&-card {
-				background: linear-gradient(70deg, rgba($color: $pink, $alpha: 1) 10%, rgba($color: $blue, $alpha: 1) 100%);
+				// background: linear-gradient(70deg, rgba($color: $pink, $alpha: 1) 10%, rgba($color: $blue, $alpha: 1) 100%);
+				// background-color: #ccccff;
+				background-color: $white;
+				border: 1px solid $white;
+				box-shadow: 0 0 20px 1px rgba($color: $main-theme-color, $alpha: 0.5);
 				padding: 20px 25px;
 				border-radius: 10px;
 				opacity: 1;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				min-width: 270px;
 
 				@media (max-width: 530px) {
 					width: 100%;
@@ -160,13 +200,16 @@ export default {
 					svg {
 						width: 35px;
 						height: 35px;
+						fill: $main-theme-color;
 					}
 
 				}
 
-				&-label {}
-
-				&-data {}
+				&-label,
+				&-data {
+					color: $main-theme-color;
+					font-weight: 600;
+				}
 			}
 		}
 
@@ -208,6 +251,14 @@ export default {
 		button {
 			@include theme-btn;
 			width: 100%;
+		}
+
+		form {
+			// @include blur-effect;
+			border-radius: 15px;
+			padding: 20px;
+			box-shadow: 0 0 10px 1px rgba($color: $main-theme-color, $alpha: 0.4);
+			background: linear-gradient(-140deg, rgba($color: $pink, $alpha: 0.3) 0%, rgba($color: $blue, $alpha: 0.3) 100%) !important;
 		}
 
 		.info-wrapper {

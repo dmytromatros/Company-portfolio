@@ -2,7 +2,7 @@
 	<div class="footer-component theme-block">
 		<div class="wrapper">
 			<div class="container">
-				<div class="row" style="row-gap: 30px;">
+				<div class="row" style="row-gap: 10px;">
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="logo-container">
 							<a href="#">
@@ -14,7 +14,7 @@
 					<div class="col-12 col-md-6 col-lg-3">
 						<ul id="menu">
 							<li :class="{ 'active-menu': item.label == activeMenu }" v-for="(item, key) in menu" :key="key">
-								<router-link :to="item.link">{{item.label}}</router-link>
+								<router-link :to="item.link">{{ item.label }}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -89,29 +89,45 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
+
 .active-menu {
 	a {
 		color: #ff00fb !important;
 		font-weight: 800 !important;
 		position: relative;
-		&::before{
+
+		&::before {
 			content: "";
 			position: absolute;
 			width: 100%;
 			height: 3px;
 			background-color: #ff00fb;
-			bottom:-5px ;
+			bottom: -5px;
 			left: 0;
 		}
 	}
 }
+
 .footer-component {
-	padding-top: 100px !important;
+	padding-top: 0px !important;
 	padding-bottom: 0 !important;
-	background: linear-gradient(0deg, rgba($color: $pink, $alpha: 0.3) 10%, rgba($color: $blue, $alpha: 0.3) 100%);		
+	// background: linear-gradient(0deg, rgba($color: $pink, $alpha: 0.3) 10%, rgba($color: $blue, $alpha: 0.3) 100%);		
+	background-color: $white;
+	box-shadow: 0 0 50px 1px $main-theme-color;
+	border-radius: 50px;
+	margin: -50px 0;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+
+	.logo-container{
+		a{
+			color: $main-theme-color;
+		}
+	}
 
 	.wrapper {
-		@include blur-effect;
+		// @include blur-effect;
 		border-radius: 0;
 		padding: 70px 0;
 
@@ -129,8 +145,12 @@ export default {
 
 			li {
 				margin-bottom: 15px;
-				font-weight: 500;
 				transition: 0.3s ease-in-out all;
+
+				a {
+					color: $main-theme-color;
+					font-weight: 600;
+				}
 
 				&:hover {
 					opacity: 0.7;
@@ -144,10 +164,16 @@ export default {
 			&-item {
 				font-weight: 600;
 				margin-bottom: 30px;
+				color: $main-theme-color;
 
-				&-label {}
+				&-label {
+				color: $main-theme-color;
+
+				}
 
 				&-data {
+				color: $main-theme-color;
+
 					padding-left: 15px;
 				}
 			}
@@ -157,6 +183,7 @@ export default {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+
 			@media (max-width: 767px) {
 				display: flex;
 				flex-direction: row;
@@ -169,6 +196,7 @@ export default {
 				svg {
 					width: 30px;
 					height: 30px;
+					fill: $main-theme-color;
 				}
 
 				margin-bottom: 35px;
@@ -176,12 +204,11 @@ export default {
 		}
 
 		.copyright {
-			margin-top: 70px;
+			margin-top: 20px;
 			display: block;
 			text-align: center;
 			color: $label-text;
 			font-weight: 500;
 		}
 	}
-}
-</style>
+}</style>
