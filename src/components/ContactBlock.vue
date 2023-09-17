@@ -88,6 +88,11 @@
 let contact = require('/info.config.json').contact
 let socialMedia = require('/info.config.json').social_media
 let blockInfo = require('/info.config.json').contact_block
+
+// import { mailer } from '../../routes/mailer';
+
+import axios from 'axios'
+
 export default {
 	name: "ContactBlock",
 	data() {
@@ -103,9 +108,19 @@ export default {
 		}
 	},
 	methods: {
-		sendEmail() {
+		async sendEmail() {
 			console.log(this.formData)
+			const response = await axios.post('http://localhost:8081/api/mailer', {
+				to: this.to,
+				subject: this.subject,
+				body: this.body
+			});
+
+			console.log(response)
 		}
+	},
+	mounted(){
+		
 	}
 }
 </script>
