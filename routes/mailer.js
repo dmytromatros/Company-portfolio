@@ -1,29 +1,42 @@
 'use strict';
-
-module.exports = async (req, res) => {
-	console.log("endpoint")
-}
-
 // const nodemailer = require('nodemailer')
 
-// const transporter = nodemailer.createTransport({
-// 	service: 'gmail',
-// 	auth: {
-// 		user: "dimamatros33@gmail.com",
-// 		pass: "DimA2002"
-// 	}
-// })
+module.exports = async (req, res) => {
+	try {
 
-// function sendEmail(){
-// 	const mailOptions = {
-// 		from : 'dimamatros33@gmail.com',
-// 		to : 'dimamatros33@gmail.com',
-// 		subject: 'Test letter',
-// 		text: 'Test letter'
-// 	}
-	
-// 	transporter.sendMail(mailOptions)
-// }
+		// const transporter = nodemailer.createTransport({
+		// 	service: 'gmail',
+		// 	auth: {
+		// 		user: "it.from.heart@gmail.com",
+		// 		pass: "lupp wsqw yvtv gpoq"
+		// 	}
+		// })
+
+
+		// const mailOptions = {
+		// 	from: req.body.email,
+		// 	to: 'it.from.heart@gmail.com',
+		// 	subject: `Name: ${req.body.name} , Email : ${req.body.email}`,
+		// 	text: req.body.text
+		// }
+
+		// transporter.sendMail(mailOptions)
+
+
+		res.status(200).json({
+			message: 'Your message has been sent!',
+			success: true
+		});
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ 
+			message: 'Something went wrong...',
+			success: true 
+		});
+	}
+};
+
+
 
 
 

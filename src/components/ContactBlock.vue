@@ -34,18 +34,20 @@
 							<div class="input-wrapper">
 								<label for="email-input">Email</label>
 								<input type="email" name="email" id="email-input" placeholder="Enter a valid email address"
-								v-model="formData.email">
+									v-model="formData.email">
 							</div>
 							<div class="input-wrapper">
 								<label for="name-input">Name</label>
-								<input type="text" name="name" id="name-input" placeholder="Enter your name" v-model="formData.name">
+								<input type="text" name="name" id="name-input" placeholder="Enter your name"
+									v-model="formData.name">
 							</div>
 							<div class="input-wrapper">
 								<label for="message">Message</label>
-								<textarea name="message" id="message" placeholder="Enter your message" v-model="formData.text"></textarea>
+								<textarea name="message" id="message" placeholder="Enter your message"
+									v-model="formData.text"></textarea>
 							</div>
 
-							<button type="submit">Send a message</button>
+							<button type="submit" :style="`background : ${successButtonColor}`" :disabled="sendButtonDisabled">{{ sendButtonText }}</button>
 						</form>
 					</div>
 					<div class="col-12 col-lg-6">
@@ -104,23 +106,29 @@ export default {
 				email: '',
 				name: '',
 				text: ''
-			}
+			},
+			sendButtonDisabled: false,
+			sendButtonText: 'Send a message',
+			successButtonColor: 'transparent'
 		}
 	},
 	methods: {
 		async sendEmail() {
-			console.log(this.formData)
-			const response = await axios.post('http://localhost:8081/api/mailer', {
-				to: this.to,
-				subject: this.subject,
-				body: this.body
-			});
 
-			console.log(response)
+			await axios.post('http://localhost:8081/api/mailer', this.formData)
+				.then(res => {
+					this.sendButtonText = res.data.message
+					this.sendButtonDisabled = true
+					if(res.data.success){
+						this.successButtonColor = 'green'
+					}else {
+						this.successButtonColor = 'red'
+					}
+				});
 		}
 	},
-	mounted(){
-		
+	mounted() {
+
 	}
 }
 </script>

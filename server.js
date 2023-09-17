@@ -6,8 +6,10 @@ const port = 8081;
 
 app.use(cors());
 
+app.use(express.json());
+
 require('./router')(app);
 
 app.listen(port, () => {
-  console.log(`Сервер запущено на порту ${port}`);
+  console.log(`Server is started using the post ${port}`);
 });
